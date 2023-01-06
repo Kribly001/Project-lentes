@@ -1,0 +1,58 @@
+.body__contact {
+    min-height: 100vh;
+    background-image: url("https://i.ibb.co/wS76s5f/banner4.webp"); 
+    background-position: center;
+    background-attachment: fixed;
+}
+
+form {
+    width: 450px;
+    margin: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 100px;
+    border-radius: 7px;
+    margin-bottom: 100px;
+}
+
+.style__contact {
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+#boton_contact {
+    background-color: #FF4E00;
+    color: #fff;
+    padding: 20px;
+}
+
+#boton_contact:hover {
+    cursor: pointer;
+}
+
+@media (max-width:480px) {
+    form {
+        width: 100%;
+    }
+}

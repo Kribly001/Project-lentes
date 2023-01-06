@@ -1,0 +1,41 @@
+.logo {
+    text-decoration: none;
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+/*Slider con BOOTSTRAP*/
+
+
+.parrafo_slide {
+    font-size: 20px;
+    color: #fff;
+  }
+  
+  .titulo_slide {
+    font-size: 25px;
+    color: #fff;
+  }
+
+  .nosotros {
+    padding-bottom: 75px;
+    padding-top: 75px;
+  }
+
+  /*Fin slider*/
+
+  .nosotros, .img_bootstrap {
+    width: 100%;
+  }
+
+  .nosotros, .presenacion {
+    text-align: right;
+  }
+  
+  .nosotros, .row {
+    display: flex;
+    align-items: center;
+  }

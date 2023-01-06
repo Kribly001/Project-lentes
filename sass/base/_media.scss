@@ -1,0 +1,178 @@
+/*Estilos para tablet*/
+@media screen and (min-width:768px) {
+    .slider{
+      height: 400px;
+    }
+    .editor__item{
+      height: 250px;
+    }
+    .container-tips{
+      margin: 50px 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  /*Estilos para web*/
+  
+  @media screen and (min-width:1024px) { 
+    .container{
+      width: 1000px;
+      margin: auto;
+    }
+    .kc-css .kc_button {
+      font-size: 15px;
+    }
+    #btn-menu {
+      display: none;
+    }
+    .main-header .container--flex{
+      display: flex;
+      align-items: center;
+    }
+    .main-header__container{
+      flex-wrap: wrap;
+      align-content: flex-start;
+    }
+    .main-header__txt{
+      width: 100%;
+    }
+    .main-header__container:nth-child(2){
+      order: -1;
+      width: 25%;
+    }
+    .main-header__container:nth-child(3){
+      width: 25%;
+      padding: 0 20px;
+    }
+    .main-header__title {
+      width: 100%;
+      font-size: 4em;
+      margin: 0;
+      border-bottom: 1px solid #ccc;
+    }
+    .main-header__link {
+      margin-bottom: 20px;
+    }
+    .main-header__btn{
+      width: 130px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .main-header__input{
+      width: 85%;
+    }
+    .main-nav{
+      visibility: visible;
+      opacity: 1;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .menu {
+      position: static;
+      width: 100%;
+      display: flex;
+      background: none;
+    }
+    .menu__link{
+      color: #333;
+    }
+    .menu__link:hover{
+      background: #333;
+      color: white;
+    }
+    .container-products {
+      grid-template-columns: repeat(3, 1fr); 
+      grid-gap: 20px;
+    }
+    .product__img {
+      height: 200px;
+    }
+    .container__testimonials{
+      font-size: 1.3em; 
+    }
+    .container-editor{
+      display: flex;
+      justify-content: space-between;
+    }
+    .editor__item{
+      width: 48%;
+      height: 50%;
+    }
+    .main-footer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+    .copy {
+      grid-column-start: span 4;
+      text-align: center;
+      margin-top: 25px;
+    }
+    .container-tips{
+      margin: 50px 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 80px;
+    }
+
+    .tip {
+      padding: 15px 15px;
+    }
+
+    .container_txt-productos {
+      font-size: 62px;
+    }
+
+    .main-title {
+      font-size: 35px;
+    }
+
+      .bg__image {
+        background-image: url("https://i.ibb.co/9HZSN2w/banner2.webp");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+        height: 25em;
+        margin-top: 80px;
+      }
+
+  }
+  
+  @media screen and (min-width:1280px) { 
+    .container{
+      width: 1200px;
+    }
+    .btn-shop {
+      width: 200px;
+    }
+    .main-header__container:nth-child(3){
+      padding-left: 60px;
+    }
+    .main-header__container:nth-child(2){
+      font-size: 1.3em;
+    }
+    .slider{
+      height: 700px;
+      font-size: 1.5em;
+    }
+  }
+  
+  @media screen and (min-width:1600px) { 
+    .container{
+      width: 1500px;
+    }
+    .main-header__container:nth-child(3){
+      padding-left: 150px;
+    }
+    .main-header__container:nth-child(2){
+      font-size: 1.5em;
+    }
+    .slider{
+      height: 800px;
+    }
+    .product__img {
+      height: 200px;
+    }
+    
+  }
