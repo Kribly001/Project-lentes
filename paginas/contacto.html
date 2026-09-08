@@ -7,11 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--Css-->
   <link rel="stylesheet" href="../css/style.css">
-  <title>Contacto</title>
+  <title>Contacto | Googles</title>
   <!--Iconos/ Font-awesone -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <!--Animaciones-->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 </head>
 
 <body class="body__contact">
@@ -27,9 +28,9 @@
       <ul>
         <li><a href="../index.html">Inicio</a></li>
         <li><a href="productos.html">Lentes de Sol</a></li>
-        <li><a href="cambios.html">Lentes de Receta</a></li>
+        <li><a href="receta.html">Lentes de Receta</a></li>
         <li><a href="nosotros.html">Sobre nosotros</a></li>
-        <li><a href class="active"="contacto.html">Contacto</a></li>
+        <li><a class="active" href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
 
@@ -37,34 +38,66 @@
 
 
 
-  <!--Formulario contacto-->
+  <!--Formulario de contacto.
+
+       Lo recibe Netlify, no un PHP: el hosting sirve archivos estaticos y no
+       ejecuta PHP, asi que el form.php que habia antes no corria nunca y el
+       mensaje no llegaba a ningun lado.
+
+       data-netlify="true" lo hace detectable al publicar, el campo oculto
+       form-name le dice cual es, y bot-field es una trampa para robots: si
+       viene llena, Netlify descarta el envio. -->
+  <form name="contacto" method="POST" action="gracias.html" data-netlify="true"
+    netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contacto">
+    <p hidden>
+      <label>No completes esto: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+    </p>
+
+    <h2 class="style__contact">Escribinos</h2>
+
+    <label for="nombre" class="etiqueta">Nombre</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+    <label for="email" class="etiqueta">Correo</label>
+    <input type="email" id="email" name="email" placeholder="Tu correo" required>
+
+    <label for="tel" class="etiqueta">Telefono</label>
+    <input type="tel" id="tel" name="tel" placeholder="Tu telefono">
+
+    <label for="mensaje" class="etiqueta">Mensaje</label>
+    <textarea id="mensaje" name="mensaje" placeholder="Que necesitas?" required></textarea>
+
+    <input type="submit" id="boton_contact" value="Enviar">
+  </form>
+
   <footer class="main-footer">
     <div class="footer__section">
       <h2 class="footer__title">Localidad</h2>
-      <p class="footer__txt">Argentina,Mendoza</p>
+      <p class="footer__txt">Mendoza, Argentina</p>
       <h2 class="footer__title_contacto">Contacto</h2>
-      <p class="footer__txt">Teléfono: +54 ************</p>
-      <p class="footer__txt">Email: styleLentes@gmail.com</p>
+      <p class="footer__txt">Teléfono: +54 2634 23-4323</p>
+      <p class="footer__txt">Email: stylegoogles@gmail.com</p>
     </div>
     <div class="footer__section">
       <h2 class="footer__title">Accesos Rápidos</h2>
-      <a href="index.html" class="footer__link">Inicio</a>
-      <a href="paginas/productos.html" class="footer__link">Lentes de Sol</a>
-      <a href="paginas/receta.html" class="footer__link">Lentes de Receta</a>
-      <a href="paginas/nosotros.html" class="footer__link">Sobre Nosotros</a>
-      <a href="paginas/contacto.html" class="footer__link">Contacto</a>
+      <a href="../index.html" class="footer__link">Inicio</a>
+      <a href="../paginas/productos.html" class="footer__link">Lentes de Sol</a>
+      <a href="../paginas/receta.html" class="footer__link">Lentes de Receta</a>
+      <a href="../paginas/nosotros.html" class="footer__link">Sobre Nosotros</a>
+      <a href="../paginas/contacto.html" class="footer__link">Contacto</a>
     </div>
     <div class="footer__section">
       <h2 class="footer__title">Suscríbete a las ofertas</h2>
       <p class="footer__txt">Al suscribirse a nuestra lista de correo, siempre recibirá nuestras últimas noticias y
         actualizaciones</p>
-      <input type="email" class="footer__input" placeholder="Escriba su mail">
-      <button class="button__fotter">Suscribirme</button>
+      <input type="email" class="footer__input" placeholder="Escriba su mail" aria-label="Tu correo">
+      <button class="button__fotter" type="button">Suscribirme</button>
     </div>
-    <p class="copy">© 2022 Goggles. Todos los derechos reservados | Design By Maximiliano Centeno</p>
+    <p class="copy">© 2026 Googles. Todos los derechos reservados | Design By Techtenoapp</p>
 
     <div class="container__bt-wp" data-aos="zoom-out-left">
-      <a href="#"><img src="../imagenes/whatsapp.png" alt="icono de whatsapp" class="icon__wp"></a>
+      <a href="https://wa.me/5492634592703" target="_blank" rel="noopener" aria-label="Escribirnos por WhatsApp"><img src="../imagenes/whatsapp.png" alt="" class="icon__wp"></a>
     </div>
 
   </footer>
@@ -74,6 +107,7 @@
     AOS.init();
   </script>
 
+  <script src="../js/carrito.js"></script>
 </body>
 
 </html>

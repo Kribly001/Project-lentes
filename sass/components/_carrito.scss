@@ -1,0 +1,235 @@
+/* Carrito.
+ *
+ * Usa el naranja de la marca (#FF4E00) y el gris oscuro del pie, para que no
+ * parezca pegado de otro sitio. El panel entra desde la derecha y en pantalla
+ * chica ocupa todo el ancho.
+ */
+
+/* El icono de cada producto pasó de <i> a <button> para que se pueda tocar con
+   el teclado. Estas tres líneas le sacan el aspecto de botón del navegador. */
+button.product__icon {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.carrito__abrir {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  z-index: 60;
+  width: 54px;
+  height: 54px;
+  border: none;
+  border-radius: 50%;
+  background-color: #FF4E00;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.carrito__insignia {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 22px;
+  padding: 2px 5px;
+  border-radius: 11px;
+  background-color: #151515;
+  color: #fff;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.carrito {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  max-width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -6px 0 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Sin esto el panel tapa la pantalla aun cerrado: `display: flex` de la regla
+   de arriba le gana al `display: none` que el navegador le da a [hidden], y el
+   aside invisible se come todos los clics de la pagina. */
+.carrito[hidden] {
+  display: none;
+}
+
+/* El boton flotante de WhatsApp esta en z-index 999 y en la misma esquina: con
+   el carrito abierto se monta encima del boton de pedir. Mientras el panel esta
+   abierto, se va. */
+body.con-carrito .container__bt-wp {
+  display: none;
+}
+
+/* Y el aviso de "se agrego al carrito" tambien: con el panel abierto el
+   producto ya se ve en la lista, y en pantalla chica el aviso caia justo encima
+   del boton de vaciar. */
+body.con-carrito .carrito__aviso {
+  display: none;
+}
+
+/* Y con el carrito cerrado, el boton del carrito se corre para no pisarlo. */
+.carrito__abrir {
+  bottom: 120px;
+}
+
+.carrito__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  background-color: #151515;
+  color: #fff;
+}
+
+.carrito__titulo {
+  margin: 0;
+  font-size: 20px;
+}
+
+.carrito__cerrar {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.carrito__lista {
+  flex: 1;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carrito__vacio {
+  padding: 30px 20px;
+  color: #555;
+  text-align: center;
+}
+
+.carrito__item {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.carrito__img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+}
+
+.carrito__nombre {
+  margin: 0;
+  font-size: 15px;
+  color: #212121;
+}
+
+.carrito__precio {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.carrito__cantidad {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.carrito__mas-menos {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #212121;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.carrito__numero {
+  min-width: 18px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.carrito__pie {
+  padding: 18px 20px;
+  border-top: 1px solid #ccc;
+}
+
+.carrito__total {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 14px;
+  font-size: 17px;
+  color: #212121;
+}
+
+.carrito__pedir {
+  display: block;
+  padding: 14px;
+  background-color: #FF4E00;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.carrito__vaciar {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Que no cobra en línea se dice acá y no en letra chica en otro lado: es lo
+   que la persona necesita saber justo antes de apretar. */
+.carrito__nota {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+}
+
+.carrito__aviso {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 80;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 10px 18px;
+  border-radius: 4px;
+  background-color: #151515;
+  color: #fff;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .carrito__abrir {
+    bottom: 90px;
+  }
+}

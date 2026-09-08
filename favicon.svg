@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Googles">
+  <!-- Un par de lentes, con el naranja de la marca. Vectorial y de menos de
+       1 KB: se ve nítido en cualquier tamaño y no hay que exportar variantes. -->
+  <rect width="64" height="64" rx="12" fill="#151515"/>
+  <g fill="none" stroke="#FF4E00" stroke-width="4">
+    <circle cx="21" cy="34" r="11"/>
+    <circle cx="47" cy="34" r="11"/>
+    <path d="M32 32h-1M8 28l5-5M56 28l-5-5"/>
+  </g>
+</svg>
